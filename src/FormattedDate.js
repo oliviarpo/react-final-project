@@ -1,5 +1,7 @@
 import React from "react";
 
+// To Do: Write date as 13:50 Wednesday 3rd February 2021
+
 export default function FormattedDate(props) {
   let days = [
     "Sunday",
