@@ -5,8 +5,8 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      <div class="container">
-        <Weather />
+      <div className="container">
+        <Weather defaultCity="London" />
         <footer>
           This project was coded by{" "}
           <a href="https://www.linkedin.com/in/oliviapovey/">Olivia Povey</a>{" "}
