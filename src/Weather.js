@@ -45,20 +45,32 @@ export default function Weather(props) {
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
-              <input
-                type="search"
-                placeholder="Enter a city..."
-                className="form-control"
-                autoFocus="on"
-                onChange={handleCityChange}
-              />
-            </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-primary w-100"
-              />
+              <div className="input-group">
+                <input
+                  type="search"
+                  placeholder="Enter a city..."
+                  className="form-control"
+                  aria-label="Type a city..."
+                  aria-describedby="basic-addon2"
+                  autoFocus="on"
+                  onChange={handleCityChange}
+                />
+
+                <div className="col-3">
+                  <div className="input-group-append">
+                    <button className="btn btn-outline-secondary" type="submit">
+                      <i className="fas fa-search-location"></i>
+                    </button>
+                    <button
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      id="current-location"
+                    >
+                      <i className="fas fa-location-arrow"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </form>
