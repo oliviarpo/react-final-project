@@ -11,9 +11,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    let unixTimestamp = response.data.dt;
-    let timezoneOffset = response.data.timezone;
-    let localUnixTimestamp = unixTimestamp + timezoneOffset;
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -25,6 +22,7 @@ export default function Weather(props) {
       sunrise: response.data.sys.sunrise,
       sunset: response.data.sys.sunset,
       city: response.data.name,
+      timezone: response.data.timezone,
       date: new Date(response.data.dt * 1000),
       lat: response.data.coord.lat,
       lon: response.data.coord.lon,
@@ -67,13 +65,6 @@ export default function Weather(props) {
                   <div className="input-group-append">
                     <button className="btn btn-outline-secondary" type="submit">
                       <i className="fas fa-search-location"></i>
-                    </button>
-                    <button
-                      className="btn btn-outline-secondary"
-                      type="button"
-                      id="current-location"
-                    >
-                      <i className="fas fa-location-arrow"></i>
                     </button>
                   </div>
                 </div>

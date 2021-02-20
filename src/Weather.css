@@ -1,8 +1,10 @@
 .Weather {
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 16px;
   max-width: 600px;
+  background-image: url(./images/clouds.jpg);
+  background-size: cover;
 }
 
 .Weather h1 {

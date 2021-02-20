@@ -13,7 +13,7 @@ export default function WeatherForecastHoursPreview(props) {
     return `${temperature}°C`;
   }
   return (
-    <div className="col-sm-2">
+    <div className="col-sm-3">
       <div className="card">
         <div className="card-body">
           {hours()}

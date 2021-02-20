@@ -10,6 +10,7 @@ export default function WeatherForecastHours(props) {
 
   function handleForecastHoursResponse(response) {
     console.log(response.data);
+    console.log(response.data.city.timezone);
     setForecast(response.data);
     setLoaded(true);
   }
@@ -22,8 +23,6 @@ export default function WeatherForecastHours(props) {
           <WeatherForecastHoursPreview data={forecast.list[1]} />
           <WeatherForecastHoursPreview data={forecast.list[2]} />
           <WeatherForecastHoursPreview data={forecast.list[3]} />
-          <WeatherForecastHoursPreview data={forecast.list[4]} />
-          <WeatherForecastHoursPreview data={forecast.list[5]} />
         </div>
       </div>
     );
