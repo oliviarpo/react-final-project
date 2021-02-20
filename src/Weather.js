@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecastHours from "./WeatherForecastHours";
-import axios from "axios";
+import WeatherForecastDays from "./WeatherForecastDays";
+
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,7 +11,9 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
+    let unixTimestamp = response.data.dt;
+    let timezoneOffset = response.data.timezone;
+    let localUnixTimestamp = unixTimestamp + timezoneOffset;
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -18,8 +22,12 @@ export default function Weather(props) {
       feels: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      sunrise: response.data.sys.sunrise,
+      sunset: response.data.sys.sunset,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
     });
   }
 
@@ -32,7 +40,6 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
-    // search for a city
   }
 
   function handleCityChange(event) {
@@ -77,6 +84,12 @@ export default function Weather(props) {
         <WeatherInfo data={weatherData} />
         <hr />
         <WeatherForecastHours city={weatherData.city} />
+        <hr />
+        <WeatherForecastDays
+          city={weatherData.city}
+          latitude={weatherData.lat}
+          longitude={weatherData.lon}
+        />
       </div>
     );
   } else {
