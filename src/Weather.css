@@ -3,14 +3,17 @@
   border-radius: 3px;
   padding: 16px;
   max-width: 600px;
-  background-image: url(./images/clouds.jpg);
+  background-image: url(./images/clear.jpg);
   background-size: cover;
+  background-position: left 0% bottom 85%;
 }
 
 .Weather h1 {
-  font-size: 24px;
+  position: relative;
+  top: 40px;
+  font-size: 54px;
   font-weight: 100;
-  margin: 20px 0 0 0;
+  margin: 20px;
   line-height: 29px;
 }
 
@@ -20,9 +23,9 @@
 }
 
 .Weather li {
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 100;
-  line-height: 19px;
+  line-height: 40px;
   list-style: none;
 }
 
@@ -33,7 +36,7 @@
 
 .Weather .temperature {
   font-size: 64px;
-  color: #202124;
+  color: #343a40;
   line-height: 64px;
 }
 
@@ -51,5 +54,5 @@
 }
 
 .btn-outline-secondary:hover {
-  background-color: #e93f33;
+  background-color: goldenrod;
 }

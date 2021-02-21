@@ -1,0 +1,38 @@
+.WeatherInfo .icon {
+  position: relative;
+  top: -30px;
+  left: 250px;
+  text-align: center;
+}
+
+.WeatherInfo .description {
+  position: relative;
+  top: 85px;
+  left: 130px;
+  text-align: center;
+}
+
+.WeatherInfo .temp {
+  position: relative;
+  top: 5px;
+  left: 250px;
+  text-align: center;
+}
+
+.WeatherInfo .details {
+  position: relative;
+  top: -40px;
+  right: 215px;
+}
+
+.WeatherInfo .date {
+  position: relative;
+  top: -10px;
+  left: 300px;
+}
+
+.WeatherInfo table {
+  margin-top: 20px;
+  margin-bottom: -40px;
+  font-size: 18px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import WeatherForecastHoursPreview from "./WeatherForecastHoursPreview";
 import axios from "axios";
+
 import "./WeatherForecastHours.css";
 
 export default function WeatherForecastHours(props) {
@@ -9,8 +10,6 @@ export default function WeatherForecastHours(props) {
   const [forecast, setForecast] = useState(null);
 
   function handleForecastHoursResponse(response) {
-    console.log(response.data);
-    console.log(response.data.city.timezone);
     setForecast(response.data);
     setLoaded(true);
   }
